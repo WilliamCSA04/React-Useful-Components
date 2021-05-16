@@ -12,3 +12,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Created changelog
 - Created README.md
 - Added Iterator component
+
+## [0.2.1] - 2021-05-16
+
+### Added
+
+- Created NPM ignore file
+- Github repository added
