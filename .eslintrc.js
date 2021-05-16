@@ -31,6 +31,12 @@ module.exports = {
       },
     },
     {
+      files: '*.test.tsx',
+      rules: {
+        'import/no-extraneous-dependencies': [0],
+      },
+    },
+    {
       files: 'jest-setup.ts',
       rules: {
         'import/no-extraneous-dependencies': [0],
