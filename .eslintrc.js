@@ -21,6 +21,8 @@ module.exports = {
   plugins: ['react', '@typescript-eslint', 'jest'],
   rules: {
     'react/jsx-filename-extension': [0],
+    'import/extensions': 'off',
+    'import/no-unresolved': 'off',
     '@typescript-eslint/explicit-module-boundary-types': [0],
   },
   overrides: [
