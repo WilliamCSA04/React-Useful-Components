@@ -8,3 +8,10 @@ test("ConditionalRenderer success case", () => {
   const element = screen.getByText(text);
   expect(element).toBeInTheDocument();
 });
+
+test("ConditionalRenderer failure case", () => {
+  const text = "Ben";
+  render(<ConditionalRenderer condition={false} onSuccess={() => <p>You've met with a terrible fate, haven't you?</p>} onFailure={() => <p>{text}</p>} />);
+  const element = screen.getByText(text);
+  expect(element).toBeInTheDocument();
+});
