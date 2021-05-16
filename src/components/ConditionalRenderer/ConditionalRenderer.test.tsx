@@ -26,14 +26,17 @@ test('ConditionalRenderer success case with optional parameter', () => {
 });
 
 test('ConditionalRenderer failure case', () => {
-  const text = 'Ben';
+  const textOnSuccess = 'Ben';
+  const textOnFailure = "You've met with a terrible fate, haven't you?";
   render(
     <ConditionalRenderer
       condition={false}
-      onSuccess={() => <p>You've met with a terrible fate, haven't you?</p>}
-      onFailure={() => <p>{text}</p>}
+      onSuccess={() => <p>{textOnSuccess}</p>}
+      onFailure={() => <p>{textOnFailure}</p>}
     />,
   );
-  const element = screen.getByText(text);
-  expect(element).toBeInTheDocument();
+  const elementOnSuccess = screen.queryByText(textOnSuccess);
+  const elementOnFailure = screen.getByText(textOnFailure);
+  expect(elementOnSuccess).not.toBeInTheDocument();
+  expect(elementOnFailure).toBeInTheDocument();
 });
