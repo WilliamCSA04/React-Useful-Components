@@ -4,7 +4,12 @@ module.exports = {
     es2021: true,
     'jest/globals': true,
   },
-  extends: ['plugin:react/recommended', 'airbnb'],
+  extends: [
+    'plugin:react/recommended',
+    'airbnb',
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:@typescript-eslint/recommended',
+  ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
@@ -17,8 +22,7 @@ module.exports = {
     {
       files: '*.types.ts',
       rules: {
-        'no-unused-vars': [0],
-        'no-undef': [0],
+        '@typescript-eslint/no-unused-vars': [0],
       },
     },
   ],
