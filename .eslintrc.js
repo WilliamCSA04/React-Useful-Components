@@ -18,6 +18,10 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: 'module',
   },
+  plugins: ['react', '@typescript-eslint', 'jest'],
+  rules: {
+    'react/jsx-filename-extension': [0],
+  },
   overrides: [
     {
       files: '*.types.ts',
@@ -25,9 +29,11 @@ module.exports = {
         '@typescript-eslint/no-unused-vars': [0],
       },
     },
+    {
+      files: 'jest-setup.ts',
+      rules: {
+        'import/no-extraneous-dependencies': [0],
+      },
+    },
   ],
-  plugins: ['react', '@typescript-eslint', 'jest'],
-  rules: {
-    'react/jsx-filename-extension': [0],
-  },
 };
