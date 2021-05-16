@@ -13,6 +13,15 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: 'module',
   },
+  overrides: [
+    {
+      files: '*.types.ts',
+      rules: {
+        'no-unused-vars': [0],
+        'no-undef': [0],
+      },
+    },
+  ],
   plugins: ['react', '@typescript-eslint', 'jest'],
   rules: {
     'react/jsx-filename-extension': [0],
