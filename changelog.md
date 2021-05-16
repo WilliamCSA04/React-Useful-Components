@@ -19,3 +19,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Created NPM ignore file
 - Github repository added
+
+## [0.2.2] - 2021-05-16
+
+### Changes
+
+- Files included on package
