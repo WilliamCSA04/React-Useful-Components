@@ -10,3 +10,4 @@ yarn.lock
 node_modules
 src
 jest-setup
+jest.config.js
