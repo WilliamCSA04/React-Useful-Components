@@ -1,14 +1,18 @@
 {
   "name": "react-useful-components",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Basic react components that are meant to keep code cleaner",
   "main": "./lib/cjs/index.js",
   "module": "./lib/esm/index.js",
   "types": "./lib/esm/index.d.ts",
   "author": "William Avila",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WilliamCSA04/React-Useful-Components"
+  },
   "files": [
-    "/lib"
+    "./lib"
   ],
   "scripts": {
     "build": "yarn build:esm && yarn build:cjs",
