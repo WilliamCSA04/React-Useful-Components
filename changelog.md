@@ -25,3 +25,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changes
 
 - Files included on package
+
+## [0.2.3] - 2021-05-16
+
+### Added
+
+- Testing
+
+### Changes
+
+- Prettier and Eslint configs
