@@ -42,3 +42,19 @@ test('Iterator should render fallback function', () => {
   expect(element).toBeInTheDocument();
   expect(onRender).not.toHaveBeenCalled();
 });
+
+test('Iterator should render fallback with props', () => {
+  const list = [];
+  const text = "Here I'm";
+  const onRender = jest.fn();
+  const onFallback = jest.fn((props) => <p>{props.text}</p>);
+  render(
+    <Iterator
+      list={list}
+      onRender={onRender}
+      onFallback={onFallback}
+      onFallbackProps={{ text }}
+    />,
+  );
+  expect(onFallback).toHaveBeenCalledWith({ text });
+});
