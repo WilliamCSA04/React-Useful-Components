@@ -1,6 +1,6 @@
 /**
  * @interface IteratorPropTypes
- * @param list Data list that will be accesible by onRender
+ * @param list Data list that will be accessible by onRender
  * @param onRender React function used to map list
  * @param onFallback React function that will be executed if list is empty
  * @param onFallbackProps Props that will used as onFallback props
