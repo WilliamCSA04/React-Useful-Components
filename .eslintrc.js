@@ -24,14 +24,10 @@ module.exports = {
     'import/extensions': 'off',
     'import/no-unresolved': 'off',
     '@typescript-eslint/explicit-module-boundary-types': [0],
+    'no-use-before-define': 'off',
+    '@typescript-eslint/no-use-before-define': ['warn'],
   },
   overrides: [
-    {
-      files: '*.types.ts',
-      rules: {
-        '@typescript-eslint/no-unused-vars': [0],
-      },
-    },
     {
       files: '*.test.tsx',
       rules: {
