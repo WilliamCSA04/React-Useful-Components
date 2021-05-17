@@ -11,6 +11,10 @@
     "type": "git",
     "url": "https://github.com/WilliamCSA04/React-Useful-Components"
   },
+  "keywords": [
+    "react",
+    "components"
+  ],
   "files": [
     "lib"
   ],
