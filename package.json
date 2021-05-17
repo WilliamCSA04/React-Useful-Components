@@ -24,7 +24,7 @@
     "build:cjs": "rimraf lib/cjs && tsc --module commonjs --outDir lib/cjs",
     "test": "jest src",
     "lint": "eslint",
-    "publish": "yarn build && npm publish"
+    "release": "yarn build && npm publish"
   },
   "peerDependencies": {
     "react": "^17.0.2",
