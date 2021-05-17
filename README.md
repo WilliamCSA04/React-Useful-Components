@@ -14,3 +14,44 @@ You can use this lib installing it with NPM or Yarn:
 Or you can use [CDN link](https://cdn.jsdelivr.net/npm/react-useful-components@0.2.3/lib/cjs/index.min.js):
 
 `<script src="https://cdn.jsdelivr.net/npm/react-useful-components@0.2.3/lib/cjs/index.min.js"></script>`
+
+## Components
+
+Currently, these are all components that this lib provides:
+
+- [Conditional Renderer](https://github.com/WilliamCSA04/React-Useful-Components/tree/master/src/components/ConditionalRenderer): This component receive a `condition`, if it is a `truthy` value,
+  this components renders `onSuccess` function, otherwise, renders `onFailure`;
+
+  Example:
+
+  ```javascript
+  import { ConditionalRenderer } from "react-useful-components";
+
+  export default function SuccessOrError() {
+    return (
+      <ConditionalRenderer
+        condition={false}
+        onSuccess={() => <p>Success</p>}
+        onFailure={() => <p>Error</p>}
+      />
+    );
+  }
+  ```
+
+- [Iterator](https://github.com/WilliamCSA04/React-Useful-Components/tree/master/src/components/Iterator):
+  This component is useful to interate over a list of data and render a list of `JSX.Element`.
+
+  Example:
+
+  ```javascript
+  import { Iterator } from "react-useful-components";
+
+  export default function SuccessOrError() {
+    return (
+      <Iterator
+        list={["one", "two"]}
+        onRender={(prop, index) => <p>{prop}</p>}
+      />
+    );
+  }
+  ```
