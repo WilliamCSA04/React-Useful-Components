@@ -55,3 +55,7 @@ Currently, these are all components that this lib provides:
     );
   }
   ```
+
+## Bugs or extra info
+
+If you find any bug, or have any questions to make, do it on the [issue section](https://github.com/WilliamCSA04/React-Useful-Components/issues). Feel free to contributing as well by forking and open a PR, just open a issue before to request it, if you have an idea but don't want or can't implement it, also write a issue describing it.
