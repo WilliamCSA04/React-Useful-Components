@@ -6,7 +6,6 @@
  * @param onFallbackProps Props that will used as onFallback props
  */
 
-// eslint-disable-next-line @typescript-eslint/ban-types
 export interface IteratorPropTypes<T, K> {
   list: Array<T>;
   onRender: (prop: T, index: number, originalList: Array<T>) => JSX.Element;
