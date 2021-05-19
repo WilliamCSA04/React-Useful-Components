@@ -5,10 +5,6 @@ class Validator {
 
   errors: Array<string> = [];
 
-  set setValue(value: unknown) {
-    this.value = value;
-  }
-
   construction() {
     this.errors = [];
     this.value = null;
@@ -18,10 +14,22 @@ class Validator {
     return this;
   }
 
+  set setValue(value: unknown) {
+    this.value = value;
+  }
+
+  get getErrors() {
+    return this.errors;
+  }
+
+  private appendError(error: string) {
+    this.errors.push(error);
+  }
+
   String() {
     const { value } = this;
     if (!(typeof value === 'string')) {
-      this.errors.push(`${value} is not a string`);
+      this.appendError(`${value} is not a string`);
     }
     return this;
   }
@@ -29,7 +37,7 @@ class Validator {
   Number() {
     const { value } = this;
     if (!(typeof value === 'number')) {
-      this.errors.push(`${value} is not a number`);
+      this.appendError(`${value} is not a number`);
     }
     return this;
   }
@@ -37,7 +45,7 @@ class Validator {
   Array() {
     const { value } = this;
     if (!Array.isArray(value)) {
-      this.errors.push(`${value} is not a number`);
+      this.appendError(`${value} is not a number`);
     }
     return this;
   }
@@ -45,7 +53,7 @@ class Validator {
   Boolean() {
     const { value } = this;
     if (!(typeof value === 'boolean')) {
-      this.errors.push(`${value} is not a boolean`);
+      this.appendError(`${value} is not a boolean`);
     }
     return this;
   }
@@ -53,7 +61,7 @@ class Validator {
   Range({ min = 0, max = Number.MAX_SAFE_INTEGER }) {
     const { value } = this;
     if (!(typeof value === 'number' && value > min && value < max)) {
-      this.errors.push(`Not in range: ${min} < ${value} < ${max}`);
+      this.appendError(`Not in range: ${min} < ${value} < ${max}`);
     }
     return this;
   }
