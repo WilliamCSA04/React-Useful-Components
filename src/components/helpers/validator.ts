@@ -60,8 +60,8 @@ class Validator {
 
   Range({ min = 0, max = Number.MAX_SAFE_INTEGER }) {
     const { value } = this;
-    if (!(typeof value === 'number' && value > min && value < max)) {
-      this.appendError(`Not in range: ${min} < ${value} < ${max}`);
+    if (!(typeof value === 'number' && value >= min && value <= max)) {
+      this.appendError(`Not in range: ${min} <= ${value} <= ${max}`);
     }
     return this;
   }
