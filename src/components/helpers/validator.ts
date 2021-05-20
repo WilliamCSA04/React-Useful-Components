@@ -58,7 +58,16 @@ class Validator {
     return this;
   }
 
-  Range({ min = 0, max = Number.MAX_SAFE_INTEGER }) {
+  Object() {
+    const { value } = this;
+    if (!(typeof value === 'object')) {
+      this.appendError(`${value} is not a object`);
+    }
+    return this;
+  }
+
+  Range(options = { min: 0, max: Number.MAX_SAFE_INTEGER }) {
+    const { min, max } = options;
     const { value } = this;
     if (!(typeof value === 'number' && value >= min && value <= max)) {
       this.appendError(`Not in range: ${min} <= ${value} <= ${max}`);
