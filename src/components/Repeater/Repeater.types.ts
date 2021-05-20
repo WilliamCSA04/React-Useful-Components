@@ -7,7 +7,7 @@ type PropsType =
   | undefined;
 
 export interface RepeaterPropTypes {
-  htmlTag: DOMAttributes<Element>;
+  htmlTag: string;
   replicableProps?: PropsType;
   specificProps?: Array<PropsType>;
   children?: ReactNode[];
