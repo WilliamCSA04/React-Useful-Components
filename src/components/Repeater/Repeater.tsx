@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import validator from '../helpers';
 import { RepeaterPropTypes } from './Repeater.types';
 
@@ -18,16 +18,31 @@ function propsValidator(
 }
 
 export default function Repeater(props: RepeaterPropTypes) {
-  const { htmlTag, ...otherProps } = props;
-  propsValidator(otherProps);
   const {
+    htmlTag,
     replicableProps = {},
     specificProps = [],
     max = Number.MAX_SAFE_INTEGER,
     min = 0,
     startsWith = 1,
-  } = otherProps;
+  } = props;
 
-  const allElements = Array(startsWith).map(() => React.createElement(htmlTag));
+  propsValidator({
+    specificProps,
+    max,
+    min,
+    startsWith,
+    replicableProps,
+  });
+
+  const mapper = useCallback(() => {
+    const element = React.createElement(htmlTag, {
+      ...replicableProps,
+      key: Date.now(),
+    });
+    return element;
+  }, []);
+
+  const allElements = Array(startsWith).fill(null).map(mapper);
   return <>{allElements}</>;
 }

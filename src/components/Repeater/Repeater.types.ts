@@ -1,4 +1,4 @@
-import React, { DOMAttributes, ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 
 type PropsType =
   | (React.InputHTMLAttributes<HTMLInputElement> &
