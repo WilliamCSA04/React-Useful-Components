@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useMemo, memo } from 'react';
 import validator from '../helpers';
 import { RepeaterPropTypes } from './Repeater.types';
 
@@ -17,7 +17,7 @@ function propsValidator(
   }
 }
 
-export default function Repeater(props: RepeaterPropTypes) {
+function Repeater(props: RepeaterPropTypes) {
   const {
     htmlTag,
     replicableProps = {},
@@ -35,14 +35,19 @@ export default function Repeater(props: RepeaterPropTypes) {
     replicableProps,
   });
 
-  const mapper = useCallback(() => {
-    const element = React.createElement(htmlTag, {
+  const mapper = useCallback(
+    () => React.createElement(htmlTag, {
       ...replicableProps,
       key: Date.now(),
-    });
-    return element;
-  }, []);
+    }),
+    [],
+  );
 
-  const allElements = Array(startsWith).fill(null).map(mapper);
+  const allElements = useMemo(
+    () => Array(startsWith).fill(null).map(mapper),
+    [],
+  );
   return <>{allElements}</>;
 }
+
+export default memo(Repeater);
