@@ -1,6 +1,6 @@
 {
   "name": "react-useful-components",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "Basic react components that are meant to keep code cleaner",
   "main": "./lib/cjs/index.js",
   "module": "./lib/esm/index.js",
